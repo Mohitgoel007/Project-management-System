@@ -9,11 +9,10 @@ This is a simple Project Management System built with Java 17 and Spring Boot.
    cd project-management
    
 2. Run the application:
-   ./mvnw spring-boot:run
+   ./mvn spring-boot:run
 
 3.Access the H2 database console at:
-  http://localhost:8080/h2-console
+  http://localhost:8080/db-project
 
 4. Access the API documentation at:
-   http://localhost:8080/swagger-ui/
-
+   http://http://localhost:8080/swagger-ui/index.html
