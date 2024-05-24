@@ -15,4 +15,4 @@ This is a simple Project Management System built with Java 17 and Spring Boot.
   http://localhost:8080/db-project
 
 4. Access the API documentation at:
-   http://http://localhost:8080/swagger-ui/index.html
+   http://localhost:8080/swagger-ui/index.html
