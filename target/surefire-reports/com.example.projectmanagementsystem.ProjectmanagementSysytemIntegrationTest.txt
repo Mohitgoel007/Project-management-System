@@ -1,0 +1,38 @@
+-------------------------------------------------------------------------------
+Test set: com.example.projectmanagementsystem.ProjectmanagementSysytemIntegrationTest
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 1, Errors: 4, Skipped: 0, Time elapsed: 12.268 s <<< FAILURE! - in com.example.projectmanagementsystem.ProjectmanagementSysytemIntegrationTest
+testDeleteOrder  Time elapsed: 1.331 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <404> but was: <200>
+	at com.example.projectmanagementsystem.ProjectmanagementSysytemIntegrationTest.testDeleteOrder(ProjectmanagementSysytemIntegrationTest.java:147)
+
+testCreateOrder  Time elapsed: 0.075 s  <<< ERROR!
+com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Java 8 date/time type `java.time.LocalDate` not supported by default: add Module "com.fasterxml.jackson.datatype:jackson-datatype-jsr310" to enable handling (through reference chain: com.example.projectmanagementsystem.models.Project["startDate"])
+	at com.example.projectmanagementsystem.ProjectmanagementSysytemIntegrationTest.testCreateOrder(ProjectmanagementSysytemIntegrationTest.java:124)
+
+testOrdersList  Time elapsed: 0.086 s  <<< ERROR!
+org.springframework.web.client.RestClientException: 
+Error while extracting response for type [java.util.List<com.example.projectmanagementsystem.models.Project>] and content type [application/json]; nested exception is org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `java.util.ArrayList<com.example.projectmanagementsystem.models.Project>` from Object value (token `JsonToken.START_OBJECT`); nested exception is com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot deserialize value of type `java.util.ArrayList<com.example.projectmanagementsystem.models.Project>` from Object value (token `JsonToken.START_OBJECT`)
+ at [Source: (org.springframework.util.StreamUtils$NonClosingInputStream); line: 1, column: 1]
+	at com.example.projectmanagementsystem.ProjectmanagementSysytemIntegrationTest.testOrdersList(ProjectmanagementSysytemIntegrationTest.java:69)
+Caused by: org.springframework.http.converter.HttpMessageNotReadableException: 
+JSON parse error: Cannot deserialize value of type `java.util.ArrayList<com.example.projectmanagementsystem.models.Project>` from Object value (token `JsonToken.START_OBJECT`); nested exception is com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot deserialize value of type `java.util.ArrayList<com.example.projectmanagementsystem.models.Project>` from Object value (token `JsonToken.START_OBJECT`)
+ at [Source: (org.springframework.util.StreamUtils$NonClosingInputStream); line: 1, column: 1]
+	at com.example.projectmanagementsystem.ProjectmanagementSysytemIntegrationTest.testOrdersList(ProjectmanagementSysytemIntegrationTest.java:69)
+Caused by: com.fasterxml.jackson.databind.exc.MismatchedInputException: 
+Cannot deserialize value of type `java.util.ArrayList<com.example.projectmanagementsystem.models.Project>` from Object value (token `JsonToken.START_OBJECT`)
+ at [Source: (org.springframework.util.StreamUtils$NonClosingInputStream); line: 1, column: 1]
+	at com.example.projectmanagementsystem.ProjectmanagementSysytemIntegrationTest.testOrdersList(ProjectmanagementSysytemIntegrationTest.java:69)
+
+testUpdateProject  Time elapsed: 0.011 s  <<< ERROR!
+com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Java 8 date/time type `java.time.LocalDate` not supported by default: add Module "com.fasterxml.jackson.datatype:jackson-datatype-jsr310" to enable handling (through reference chain: com.example.projectmanagementsystem.models.Project["startDate"])
+	at com.example.projectmanagementsystem.ProjectmanagementSysytemIntegrationTest.testUpdateProject(ProjectmanagementSysytemIntegrationTest.java:168)
+
+testOrderById  Time elapsed: 0.208 s  <<< ERROR!
+org.springframework.jdbc.datasource.init.ScriptStatementFailedException: 
+Failed to execute SQL script statement #1 of Byte array resource [from inlined SQL statement: INSERT INTO PROJECT(id, name, description, start_date, endDate) VALUES (20, 'Digital', 'project' , '2024-01-23', '2024-07-31')]: INSERT INTO PROJECT(id, name, description, start_date, endDate) VALUES (20, 'Digital', 'project' , '2024-01-23', '2024-07-31'); nested exception is org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "ENDDATE" not found; SQL statement:
+INSERT INTO PROJECT(id, name, description, start_date, endDate) VALUES (20, 'Digital', 'project' , '2024-01-23', '2024-07-31') [42122-214]
+Caused by: org.h2.jdbc.JdbcSQLSyntaxErrorException: 
+Column "ENDDATE" not found; SQL statement:
+INSERT INTO PROJECT(id, name, description, start_date, endDate) VALUES (20, 'Digital', 'project' , '2024-01-23', '2024-07-31') [42122-214]
+
